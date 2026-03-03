@@ -1,0 +1,17 @@
+{
+  "hash": "64fc47f7c18de07890e49a26e9d5724d",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Welcome\"\n---\n\n# Welcome to My Quarto Website\n\nThis is your **home page**.  \nYou can write markdown, embed code, and include figures.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nplot(cars)\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

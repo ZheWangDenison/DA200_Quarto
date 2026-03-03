@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Welcome to My Quarto Website\nThis is your home page.\nYou can write markdown, embed code, and include figures.\n\n\nCode\nplot(cars)"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Write a short introduction about yourself here.\nYou can include images:"
+  },
+  {
+    "objectID": "about.html#about-me",
+    "href": "about.html#about-me",
+    "title": "About",
+    "section": "",
+    "text": "Write a short introduction about yourself here.\nYou can include images:"
+  },
+  {
+    "objectID": "posts/DA200/200.html",
+    "href": "posts/DA200/200.html",
+    "title": "Multi-language Quarto: R + Python",
+    "section": "",
+    "text": "You can type markdown freely, and LaTex style inline math like \\(\\mu\\), \\(\\sigma^2\\), or display math like \\(\\mu\\) \\(a + b \\neq b + a\\)\n\\[\nlog(\\frac{p}{1-p})=\\beta_0 + \\beta_1x_1 + \\beta_2 x_2\n\\]\nBold, italic, hyperlink, list, table, figure, citation, etc. just like in normal Markdown.\n\nbullet 1\nbullet 2\n\n\n\n\nCol1\nCol2\nCol3\n\n\n\n\n1\n1\n\n\n\n2\n2\n\n\n\n3\n3"
+  },
+  {
+    "objectID": "posts/DA200/200.html#markdown-inline-math",
+    "href": "posts/DA200/200.html#markdown-inline-math",
+    "title": "Multi-language Quarto: R + Python",
+    "section": "",
+    "text": "You can type markdown freely, and LaTex style inline math like \\(\\mu\\), \\(\\sigma^2\\), or display math like \\(\\mu\\) \\(a + b \\neq b + a\\)\n\\[\nlog(\\frac{p}{1-p})=\\beta_0 + \\beta_1x_1 + \\beta_2 x_2\n\\]\nBold, italic, hyperlink, list, table, figure, citation, etc. just like in normal Markdown.\n\nbullet 1\nbullet 2\n\n\n\n\nCol1\nCol2\nCol3\n\n\n\n\n1\n1\n\n\n\n2\n2\n\n\n\n3\n3"
+  },
+  {
+    "objectID": "posts/DA200/200.html#figure",
+    "href": "posts/DA200/200.html#figure",
+    "title": "Multi-language Quarto: R + Python",
+    "section": "Figure",
+    "text": "Figure\n\n\n\nAdam"
+  },
+  {
+    "objectID": "posts/DA200/200.html#r-chunk",
+    "href": "posts/DA200/200.html#r-chunk",
+    "title": "Multi-language Quarto: R + Python",
+    "section": "R chunk",
+    "text": "R chunk\n\n\nCode\n# R code example\n\nlibrary(ggplot2)\nggplot(data = cars, aes(x = speed, y = dist)) +\n  geom_point(color = \"blue\", size = 3, alpha = 0.8) +\n  geom_smooth(method = \"lm\",linetype = \"dashed\", color = \"firebrick\") +\n  labs(\n    title = \"Stopping Distance vs. Speed\",\n    x = \"Speed (mph)\",\n    y = \"Stopping Distance (ft)\"\n  )\n\n\n\n\n\n\n\n\n\n\n\nCode\n# call python\nlibrary(reticulate)\n\npy_config()\n\n\npython:         /Users/wangz/.virtualenvs/r-reticulate/bin/python\nlibpython:      /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/config-3.11-darwin/libpython3.11.dylib\npythonhome:     /Users/wangz/.virtualenvs/r-reticulate:/Users/wangz/.virtualenvs/r-reticulate\nversion:        3.11.3 (v3.11.3:f3909b8bc8, Apr  4 2023, 20:12:10) [Clang 13.0.0 (clang-1300.0.29.30)]\nnumpy:          /Users/wangz/.virtualenvs/r-reticulate/lib/python3.11/site-packages/numpy\nnumpy_version:  2.3.3\n\n\nCode\npy_install(\"pandas\") # install python package in r\n\n\nUsing virtual environment '/Users/wangz/.virtualenvs/r-reticulate' ...\n\n\nCode\npy_install(\"matplotlib\")\n\n\nUsing virtual environment '/Users/wangz/.virtualenvs/r-reticulate' ..."
+  },
+  {
+    "objectID": "posts/DA200/200.html#python-chunk",
+    "href": "posts/DA200/200.html#python-chunk",
+    "title": "Multi-language Quarto: R + Python",
+    "section": "Python chunk:",
+    "text": "Python chunk:\n\n\nCode\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# small df\ndf = pd.DataFrame({\"x\": np.arange(5), \"y\": [3,1,4,1,5]})\n\n\n# Create a basic line plot\nplt.plot(df.x, df.y, marker=\"o\")      \n\nplt.xlabel(\"x\")\nplt.ylabel(\"y\")\nplt.title(\"Line Plot Example\")\n\n# Show the plot window\nplt.show()"
+  },
+  {
+    "objectID": "posts/DA200/200.html#transfer-data-between-r-and-python",
+    "href": "posts/DA200/200.html#transfer-data-between-r-and-python",
+    "title": "Multi-language Quarto: R + Python",
+    "section": "Transfer Data between R and Python",
+    "text": "Transfer Data between R and Python\nWrite and Read\n\n\nCode\n# write.csv(cars, \"cars.csv\", row.names = FALSE)\n\n\n\n\nCode\nimport pandas as pd\ndata = pd.read_csv(\"cars.csv\")\ndata.head()\n\n\n\n\n\n\n\n\n\nspeed\ndist\n\n\n\n\n0\n4\n2\n\n\n1\n4\n10\n\n\n2\n7\n4\n\n\n3\n7\n22\n\n\n4\n8\n16\n\n\n\n\n\n\n\nOr direct send your object to Python\n\n\nCode\n# Send to Python\n\npy$cars &lt;- cars         # assign to Python\n\n\ncheck function r_to_python and python_to_r"
+  }
+]

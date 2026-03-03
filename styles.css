@@ -1,0 +1,9 @@
+body {
+  font-family: 'Inter', sans-serif;
+}
+.navbar {
+  background-color: #002b36;
+}
+.navbar a {
+  color: #fff !important;
+}

@@ -1,0 +1,114 @@
+---
+title: "Multi-language Quarto: R + Python"
+author: "Z. Wang"
+format:
+  html:
+    toc: true
+    code-fold: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+## Markdown + Inline Math
+
+You can type markdown freely, and LaTex style inline math like $\mu$, $\sigma^2$, or display math like $\mu$ $a + b \neq b + a$
+
+$$
+log(\frac{p}{1-p})=\beta_0 + \beta_1x_1 + \beta_2 x_2
+$$
+
+**Bold**, *italic,* [**hyperlink**](https://my.denison.edu/), list, table, figure, citation, etc. just like in normal Markdown.
+
+-   bullet 1
+
+-   bullet 2
+
+| Col1 | Col2 | Col3 |
+|------|------|------|
+| 1    | 1    |      |
+| 2    | 2    |      |
+| 3    | 3    |      |
+
+## Figure
+
+![Adam](Adam.png)
+
+## R chunk
+
+```{r}
+# R code example
+
+library(ggplot2)
+ggplot(data = cars, aes(x = speed, y = dist)) +
+  geom_point(color = "blue", size = 3, alpha = 0.8) +
+  geom_smooth(method = "lm",linetype = "dashed", color = "firebrick") +
+  labs(
+    title = "Stopping Distance vs. Speed",
+    x = "Speed (mph)",
+    y = "Stopping Distance (ft)"
+  )
+
+```
+
+```{r}
+# call python
+library(reticulate)
+
+py_config()
+
+
+
+py_install("pandas") # install python package in r
+py_install("matplotlib")
+```
+
+## Python chunk:
+
+```{python}
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# small df
+df = pd.DataFrame({"x": np.arange(5), "y": [3,1,4,1,5]})
+
+
+# Create a basic line plot
+plt.plot(df.x, df.y, marker="o")      
+
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Line Plot Example")
+
+# Show the plot window
+plt.show()
+
+```
+
+## Transfer Data between R and Python
+
+Write and Read
+
+```{r write}
+# write.csv(cars, "cars.csv", row.names = FALSE)
+
+```
+
+```{python read}
+import pandas as pd
+data = pd.read_csv("cars.csv")
+data.head()
+```
+
+Or direct send your object to Python
+
+```{r}
+# Send to Python
+
+py$cars <- cars         # assign to Python
+
+```
+
+check function `r_to_python` and `python_to_r`

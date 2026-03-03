@@ -1,0 +1,37 @@
+project:
+  type: website
+  output-dir: _site
+
+execute:
+  freeze: auto
+
+
+website:
+  title: "My Website"
+  search:
+     location: navbar
+     type: overlay
+  navbar:
+   left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - text: Blog
+        menu:
+          - href: posts/DA200/200.qmd
+            text: My DA200 Project
+
+     
+  page-footer:
+    center: |
+      © {{< meta year >}} · Applied Sequential Analysis · Built with Quarto by Dr. Zhe Wang @Denison University
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-fold: show
+    number-sections: false
+    anchor-sections: true
+    #css: styles.css

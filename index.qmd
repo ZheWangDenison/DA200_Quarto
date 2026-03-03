@@ -1,0 +1,13 @@
+---
+title: "Welcome"
+---
+
+# Welcome to My Quarto Website
+
+This is your **home page**.  
+You can write markdown, embed code, and include figures.
+
+```{r}
+#| echo: true
+plot(cars)
+```
